@@ -9,52 +9,74 @@ import 'package:flutteranimatedchartsapp/main.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import './iconButton.dart';
 import './Individual.dart';
+import 'package:firebase_database/firebase_database.dart';
+
+
 
 
 class FlameSensor extends StatefulWidget {
     final Widget child;
+    
 
   FlameSensor({Key key, this.child}) : super(key: key);
 
-  _FlameSensorState createState() => _FlameSensorState();
+  _GasSensorState createState() => _GasSensorState();
 }
 
-class _FlameSensorState extends State<FlameSensor> {
-  List<charts.Series<Sensors, num>> _seriesData2;
+class _GasSensorState extends State<FlameSensor> {
+  List<charts.Series<Sensors, num>> _seriesDataFlame;
+  
   _generateData() {
-   var data2 = [
-      new Sensors(1, 30),
-      new Sensors(2, 20),
-      new Sensors(3, 40),
-      new Sensors(4, 50),
-      new Sensors(5, 25),
-      new Sensors(6, 65),
-      new Sensors(7, 45),
-      new Sensors(8, 75),
-      new Sensors(9, 200),
-      new Sensors(10, 151),
-      new Sensors(11, 252),
-      new Sensors(12, 101),
+  var dataFlame = [
+    new Sensors(1, 0),
+      new Sensors(2, 0),
+      new Sensors(3, 1),
+      new Sensors(4, 1),
+      new Sensors(5, 1),
+      new Sensors(6, 0),
+      new Sensors(7, 0),
+      new Sensors(8, 0),
+      new Sensors(9, 0),
+      new Sensors(10, 0),
+      new Sensors(11, 0),
+      new Sensors(12, 0),
+       new Sensors(13,0 ),
+      new Sensors(14, 0),
+      new Sensors(15, 0),
+      new Sensors(16, 0),
+      new Sensors(17, 0),
+      new Sensors(18, 0),
+      new Sensors(19, 0),
+      new Sensors(20, 0),
     ];
-    _seriesData2.add(
+    
+    _seriesDataFlame.add(
       charts.Series(
         domainFn: (Sensors sensors, _) => sensors.month,
         measureFn: (Sensors sensors, _) => sensors.reading,
-        id: '2019',
-        data: data2,
+        id: '2020',
+        data: dataFlame,
         fillPatternFn: (_, __) => charts.FillPatternType.solid,
         fillColorFn: (Sensors sensors, _) =>
-            charts.ColorUtil.fromDartColor(Color(0xff109618)),
+            charts.ColorUtil.fromDartColor(Color(0xffff9900)),
       ),
     );
-  }
+    
+}
+@override
   void initState() {
     // TODO: implement initState
     super.initState();
-    _seriesData2 = List<charts.Series<Sensors, num>>();
+    _seriesDataFlame = List<charts.Series<Sensors, num>>();
+    
     
     _generateData();
   }
+  
+  
+  
+  
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -84,6 +106,7 @@ class _FlameSensorState extends State<FlameSensor> {
                 ),
               ),
               ),
+             
           body: Column (
               children: [
                 
@@ -95,23 +118,22 @@ class _FlameSensorState extends State<FlameSensor> {
                       child: Center(
     
                        child: Column(
-      
                             children: <Widget>[
                               Text(
-                                'Flame ',
+                                'Flame    ',
                                 style: TextStyle(
                                     fontSize: 24.0,
                                     fontWeight: FontWeight.bold),
                               ),
                               Expanded(
-                                child: charts.LineChart(_seriesData2,
+                                child: charts.LineChart(_seriesDataFlame,
                                     defaultRenderer:
                                         new charts.LineRendererConfig(
                                             includeArea: true, stacked: true),
                                     animate: true,
                                     animationDuration: Duration(seconds: 2),
                                     behaviors: [
-                                      new charts.ChartTitle('Months',
+                                      new charts.ChartTitle('Time',
                                           behaviorPosition:
                                               charts.BehaviorPosition.bottom,
                                           titleOutsideJustification: charts
@@ -125,6 +147,7 @@ class _FlameSensorState extends State<FlameSensor> {
                                               .middleDrawArea),
                                     ]),
                               ),
+                             
                             ],
                           ),
                       ),
@@ -140,10 +163,12 @@ class _FlameSensorState extends State<FlameSensor> {
   }
 }
 
-class Sensors {
-  int month;
 
-  int reading;
+
+class Sensors {
+  num month;
+
+  double reading;
 
   Sensors(this.month, this.reading);
 }

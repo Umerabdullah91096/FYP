@@ -20,8 +20,8 @@
   }
 }*/
 class DHT22 {
-  final dht;
-  final time;
+  final int dht;
+  List<dynamic> time=new List<dynamic>();
   
   DHT22(this.dht,this.time);
 

@@ -21,60 +21,52 @@ class _CombinedGraphState extends State<CombinedGraph> {
 
   _generateData() {
     var data1 = [
-      new Sensors('Jan', 10),
-      new Sensors('Feb', 15),
-      new Sensors('Mar', 29),
-      new Sensors('Apr', 31),
-      new Sensors('May', 30),
-      new Sensors('Jun', 35),
-      new Sensors('Jul', 39),
-      new Sensors('Aug', 34),
-      new Sensors('Sept', 28),
-      new Sensors('Oct', 27),
-      new Sensors('Nov', 21),
-      new Sensors('Dec', 16),
+      new Sensors('1', 30),
+      new Sensors('2', 30),
+      new Sensors('3', 35),
+      new Sensors('4', 37),
+      new Sensors('5', 37),
+      new Sensors('6', 36),
+      new Sensors('7', 36),
+      new Sensors('8', 38),
+      new Sensors('9', 39),
+      new Sensors('10', 38),
     ];
     var data2 = [
-      new Sensors('Jan', 0),
-      new Sensors('Feb', 0),
-      new Sensors('Mar', 1),
-      new Sensors('Apr', 0),
-      new Sensors('May', 1),
-      new Sensors('Jun', 1),
-      new Sensors('Jul', 1),
-      new Sensors('Aug', 1),
-      new Sensors('Sept', 0),
-      new Sensors('Oct', 0),
-      new Sensors('Nov', 1),
-      new Sensors('Dec', 0),
+     new Sensors('1', 0),
+      new Sensors('2', 0),
+      new Sensors('3', 1),
+      new Sensors('4', 1),
+      new Sensors('5', 1),
+      new Sensors('6', 0),
+      new Sensors('7', 0),
+      new Sensors('8', 0),
+      new Sensors('9', 0),
+      new Sensors('10', 0),
     ];
     var data3 = [
-      new Sensors('Jan', 30),
-      new Sensors('Feb', 40),
-      new Sensors('Mar', 10),
-      new Sensors('Apr', 20),
-      new Sensors('May', 25),
-      new Sensors('Jun', 35),
-      new Sensors('Jul', 45),
-      new Sensors('Aug', 55),
-      new Sensors('Sept', 60),
-      new Sensors('Oct', 15),
-      new Sensors('Nov', 25),
-      new Sensors('Dec', 10),
+     new Sensors('1', 127),
+      new Sensors('2', 138),
+      new Sensors('3', 164),
+      new Sensors('4', 92),
+      new Sensors('5', 156),
+      new Sensors('6', 143),
+      new Sensors('7', 65),
+      new Sensors('8', 89),
+      new Sensors('9', 114),
+      new Sensors('10', 149),
     ];
      var data = [
-      new Sensors('Jan', 40),
-      new Sensors('Feb', 47),
-      new Sensors('Mar', 19),
-      new Sensors('Apr', 25),
-      new Sensors('May', 44),
-      new Sensors('Jun', 65),
-      new Sensors('Jul', 5),
-      new Sensors('Aug', 65),
-      new Sensors('Sept', 30),
-      new Sensors('Oct', 12),
-      new Sensors('Nov', 35),
-      new Sensors('Dec', 20),
+      new Sensors('1', 1.167),
+      new Sensors('2', 0.993),
+      new Sensors('3', 0.569),
+      new Sensors('4', 0.783),
+      new Sensors('5', 1.245),
+      new Sensors('6', 0.834),
+      new Sensors('7', 0.952),
+      new Sensors('8', 1.167),
+      new Sensors('9', 0.993),
+      new Sensors('10', 0.569),
     ];
 
     
@@ -221,7 +213,7 @@ class _CombinedGraphState extends State<CombinedGraph> {
 class Sensors {
   String month;
 
-  int reading;
+  double reading;
 
   Sensors(this.month, this.reading);
 }

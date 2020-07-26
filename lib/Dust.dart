@@ -9,55 +9,76 @@ import 'package:flutteranimatedchartsapp/main.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import './iconButton.dart';
 import './Individual.dart';
+import 'package:firebase_database/firebase_database.dart';
+
+
 
 
 class DustSensor extends StatefulWidget {
     final Widget child;
+    
 
   DustSensor({Key key, this.child}) : super(key: key);
 
-  _DustSensorState createState() => _DustSensorState();
+  _GasSensorState createState() => _GasSensorState();
 }
 
-class _DustSensorState extends State<DustSensor> {
- List<charts.Series<Sensors, num>> _seriesData;
+class _GasSensorState extends State<DustSensor> {
+  List<charts.Series<Sensors, num>> _seriesDataDust;
+  
   _generateData() {
-   var data = [
-      new Sensors(1, 1.167),
-      new Sensors(2, 0.493),
-      new Sensors(3, 0.069),
-      new Sensors(4, 0.083),
+  var dataDust = [
+     new Sensors(1, 1.167),
+      new Sensors(2, 0.993),
+      new Sensors(3, 0.569),
+      new Sensors(4, 0.783),
       new Sensors(5, 1.245),
-      new Sensors(6, 0.034),
-      new Sensors(7, 0.452),
-      new Sensors(8, 0.653),
-      new Sensors(9, 0.097),
-      new Sensors(10, 0.197),
-      new Sensors(11, 0.469),
-      new Sensors(12, 0.389),
+      new Sensors(6, 0.834),
+      new Sensors(7, 0.952),
+      new Sensors(8, 1.167),
+      new Sensors(9, 0.993),
+      new Sensors(10, 0.569),
+      new Sensors(11, 0.783),
+      new Sensors(12, 1.245),
+      new Sensors(13, 0.834),
+      new Sensors(14, 0.952),
+      new Sensors(15, 1.153),
+      new Sensors(16, 0.897),
+      new Sensors(17, 0.897),
+      new Sensors(18, 1.169),
+      new Sensors(19, 0.989),
+      new Sensors(20, 0.889),
     ];
-    _seriesData.add(
+    
+    _seriesDataDust.add(
       charts.Series(
         domainFn: (Sensors sensors, _) => sensors.month,
         measureFn: (Sensors sensors, _) => sensors.reading,
-        id: '2021',
-        data: data,
+        id: '2020',
+        data: dataDust,
         fillPatternFn: (_, __) => charts.FillPatternType.solid,
         fillColorFn: (Sensors sensors, _) =>
             charts.ColorUtil.fromDartColor(Color(0xffff9900)),
       ),
     );
-  }
+    
+}
+@override
   void initState() {
     // TODO: implement initState
     super.initState();
-    _seriesData = List<charts.Series<Sensors, num>>();
+    _seriesDataDust = List<charts.Series<Sensors, num>>();
+    
     
     _generateData();
   }
+  
+  
+  
+  
+  
   @override
   Widget build(BuildContext context) {
-    
     return MaterialApp(
       home: DefaultTabController(
         length: 3,
@@ -75,9 +96,9 @@ class _DustSensorState extends State<DustSensor> {
               
               title: Center(
                 child: Text(
-                  'Dust & Smoke  ',
+                  'Dust ',
                   style: TextStyle(
-                      fontSize: 30,
+                      fontSize: 35,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 2,
                       fontStyle: FontStyle.italic,
@@ -85,12 +106,13 @@ class _DustSensorState extends State<DustSensor> {
                 ),
               ),
               ),
+             
           body: Column (
               children: [
                 
                 SizedBox(
                   height: 600,
-                       child: Padding(
+                                  child: Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Container(
                       child: Center(
@@ -98,20 +120,20 @@ class _DustSensorState extends State<DustSensor> {
                        child: Column(
                             children: <Widget>[
                               Text(
-                                'Dust ',
+                                'Density    ',
                                 style: TextStyle(
                                     fontSize: 24.0,
                                     fontWeight: FontWeight.bold),
                               ),
                               Expanded(
-                                child: charts.LineChart(_seriesData,
+                                child: charts.LineChart(_seriesDataDust,
                                     defaultRenderer:
                                         new charts.LineRendererConfig(
                                             includeArea: true, stacked: true),
                                     animate: true,
                                     animationDuration: Duration(seconds: 2),
                                     behaviors: [
-                                      new charts.ChartTitle('Months',
+                                      new charts.ChartTitle('Time',
                                           behaviorPosition:
                                               charts.BehaviorPosition.bottom,
                                           titleOutsideJustification: charts
@@ -125,6 +147,7 @@ class _DustSensorState extends State<DustSensor> {
                                               .middleDrawArea),
                                     ]),
                               ),
+                             
                             ],
                           ),
                       ),
@@ -135,14 +158,15 @@ class _DustSensorState extends State<DustSensor> {
           ),
         ),
       ),
-                    
       
     );
   }
 }
 
+
+
 class Sensors {
-  int month;
+  num month;
 
   double reading;
 

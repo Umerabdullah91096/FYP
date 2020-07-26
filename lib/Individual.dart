@@ -30,60 +30,93 @@ class _IndividualGraphState extends State<IndividualGraph> {
 
   _generateData() {
     var data1 = [
-      new Sensors(1, 30),
-      new Sensors(2, 40),
-      new Sensors(3, 10),
-      new Sensors(4, 20),
-      new Sensors(5, 25),
-      new Sensors(6, 35),
-      new Sensors(7, 45),
-      new Sensors(8, 55),
-      new Sensors(9, 60),
-      new Sensors(10, 15),
-      new Sensors(11, 25),
-      new Sensors(12, 10),
+     new Sensors(1, 30),
+      new Sensors(2, 30),
+      new Sensors(3, 35),
+      new Sensors(4, 37),
+      new Sensors(5, 37),
+      new Sensors(6, 36),
+      new Sensors(7, 36),
+      new Sensors(8, 38),
+      new Sensors(9, 39),
+      new Sensors(10, 38),
+      new Sensors(11, 37),
+      new Sensors(12, 38),
+      new Sensors(13, 37),
+      new Sensors(14, 36),
+      new Sensors(15, 36),
+      new Sensors(16, 38),
+      new Sensors(17, 39),
+      new Sensors(18, 38),
+      new Sensors(19, 37),
+      new Sensors(20, 38),
+     
     ];
     var data2 = [
-      new Sensors(1, 30),
-      new Sensors(2, 20),
-      new Sensors(3, 40),
-      new Sensors(4, 50),
-      new Sensors(5, 25),
-      new Sensors(6, 65),
-      new Sensors(7, 45),
-      new Sensors(8, 75),
-      new Sensors(9, 200),
-      new Sensors(10, 151),
-      new Sensors(11, 252),
-      new Sensors(12, 101),
+      new Sensors(1, 0),
+      new Sensors(2, 0),
+      new Sensors(3, 1),
+      new Sensors(4, 1),
+      new Sensors(5, 1),
+      new Sensors(6, 0),
+      new Sensors(7, 0),
+      new Sensors(8, 0),
+      new Sensors(9, 0),
+      new Sensors(10, 0),
+      new Sensors(11, 0),
+      new Sensors(12, 0),
+       new Sensors(13,0 ),
+      new Sensors(14, 0),
+      new Sensors(15, 0),
+      new Sensors(16, 0),
+      new Sensors(17, 0),
+      new Sensors(18, 0),
+      new Sensors(19, 0),
+      new Sensors(20, 0),
     ];
     var data3 = [
-      new Sensors(1, 1875),
-      new Sensors(2, 2500),
-      new Sensors(3, 1900),
-      new Sensors(4, 1500),
-      new Sensors(5, 2900),
-      new Sensors(6, 1100),
-      new Sensors(7, 1700),
-      new Sensors(8, 1200),
-      new Sensors(9, 300),
-      new Sensors(10, 2800),
-      new Sensors(11, 2000),
-      new Sensors(12, 2200),
+      new Sensors(1, 127),
+      new Sensors(2, 138),
+      new Sensors(3, 164),
+      new Sensors(4, 92),
+      new Sensors(5, 156),
+      new Sensors(6, 143),
+      new Sensors(7, 65),
+      new Sensors(8, 89),
+      new Sensors(9, 114),
+      new Sensors(10, 149),
+      new Sensors(11, 128),
+      new Sensors(12, 152),
+      new Sensors(13, 132),
+      new Sensors(14, 149),
+      new Sensors(15, 79),
+      new Sensors(16, 89),
+      new Sensors(17, 119),
+      new Sensors(18, 137),
+      new Sensors(19, 146),
+      new Sensors(20, 150),
     ];
     var data = [
-      new Sensors(1, 1.167),
-      new Sensors(2, 0.493),
-      new Sensors(3, 0.069),
-      new Sensors(4, 0.083),
+    new Sensors(1, 1.167),
+      new Sensors(2, 0.993),
+      new Sensors(3, 0.569),
+      new Sensors(4, 0.783),
       new Sensors(5, 1.245),
-      new Sensors(6, 0.034),
-      new Sensors(7, 0.452),
-      new Sensors(8, 0.653),
-      new Sensors(9, 0.097),
-      new Sensors(10, 0.197),
-      new Sensors(11, 0.469),
-      new Sensors(12, 0.389),
+      new Sensors(6, 0.834),
+      new Sensors(7, 0.952),
+      new Sensors(8, 1.167),
+      new Sensors(9, 0.993),
+      new Sensors(10, 0.569),
+      new Sensors(11, 0.783),
+      new Sensors(12, 1.245),
+      new Sensors(13, 0.834),
+      new Sensors(14, 0.952),
+      new Sensors(15, 1.153),
+      new Sensors(16, 0.897),
+      new Sensors(17, 0.897),
+      new Sensors(18, 1.169),
+      new Sensors(19, 0.989),
+      new Sensors(20, 0.889),
     ];
 
     _seriesData1.add(
@@ -239,7 +272,7 @@ class _IndividualGraphState extends State<IndividualGraph> {
                                     animate: true,
                                     animationDuration: Duration(seconds: 2),
                                     behaviors: [
-                                      new charts.ChartTitle('Months',
+                                      new charts.ChartTitle('Time',
                                           behaviorPosition:
                                               charts.BehaviorPosition.bottom,
                                           titleOutsideJustification: charts
@@ -283,7 +316,7 @@ class _IndividualGraphState extends State<IndividualGraph> {
                                       animate: true,
                                       animationDuration: Duration(seconds: 2),
                                       behaviors: [
-                                        new charts.ChartTitle('Months',
+                                        new charts.ChartTitle('Time',
                                             behaviorPosition:
                                                 charts.BehaviorPosition.bottom,
                                             titleOutsideJustification: charts
@@ -328,7 +361,7 @@ class _IndividualGraphState extends State<IndividualGraph> {
                                       animate: true,
                                       animationDuration: Duration(seconds: 2),
                                       behaviors: [
-                                        new charts.ChartTitle('Months',
+                                        new charts.ChartTitle('Time',
                                             behaviorPosition:
                                                 charts.BehaviorPosition.bottom,
                                             titleOutsideJustification: charts
@@ -373,7 +406,7 @@ class _IndividualGraphState extends State<IndividualGraph> {
                                       animate: true,
                                       animationDuration: Duration(seconds: 2),
                                       behaviors: [
-                                        new charts.ChartTitle('Months',
+                                        new charts.ChartTitle('Time',
                                             behaviorPosition:
                                                 charts.BehaviorPosition.bottom,
                                             titleOutsideJustification: charts
@@ -428,7 +461,7 @@ class _IndividualGraphState extends State<IndividualGraph> {
             onTap: (index){
               if (index==0)
               {
-                runApp(TempSensor());
+               runApp(TempSensor());
               }
               if(index==1)
               {
@@ -455,7 +488,7 @@ class _IndividualGraphState extends State<IndividualGraph> {
 }
 
 class Sensors {
-  int month;
+  num month;
 
   double reading;
 

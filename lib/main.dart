@@ -27,7 +27,7 @@ class _Splashscreenstate extends State<SplashScreen> {
   void initState()
   {
     super.initState();
-    Timer(Duration(seconds: 5),()=>runApp (MyApp()));
+    Timer(Duration(seconds: 3),()=>runApp (MyApp()));
   }
    
  
